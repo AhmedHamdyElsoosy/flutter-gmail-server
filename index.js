@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.post('/send-email', async (req, res) => {
-  const { toEmail, clientName } = req.body;
+  const { toEmail, unitNo, project, salesAgent } = req.body;
 
   try {
     // إعدادات الإرسال من Gmail
@@ -26,24 +26,16 @@ app.post('/send-email', async (req, res) => {
     let mailOptions = {
       from: '"Ahmed Hamdy" <7amdy.elsoosy@gmail.com>',
       to: toEmail,
-      subject: '📄 إشعار بتجهيز عقد عميل',
+      subject: `(${unitNo}-${project} Booking Request Added)`,
       html: `
-  <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f9f9f9;">
-    <div style="max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-      <h2 style="color: #2c3e50;">📄 تم تجهيز عقد عميل</h2>
-      <p>نفيد سيادتكم أنه قد تم تجهيز عقد العميل التالي:</p>
-      <table style="width: 100%; margin-top: 10px;">
-        <tr>
-          <td style="font-weight: bold;">اسم العميل:</td>
-          <td>${clientName}</td>
-        </tr>
-      </table>
-      <p style="margin-top: 20px;">يرجى التكرم بإبلاغ العميل بالحضور لاستلام عقده من مقر الشركة.</p>
-      <hr style="margin: 30px 0;">
-      <p style="text-align: center; color: #888;">مع خالص التحية،<br><strong>فريق عمليات NAD</strong></p>
-    </div>
+  <div style="font-family: Arial, sans-serif; padding: 20px;">
+    <p>Unit <strong>${unitNo}_${project}</strong> has a new booking request added by <strong>${salesAgent}</strong>.</p>
+    <p>Booking in progress by operation team.</p>
+    <p>تم عمل طلب حجز عالوحدة , وفي إنتظار فريق العمليات لإتخاذ اللازم</p>
+    <br>
+    <p>Good Luck! , بالتوفيق</p>
+    <p>Sales Operations Team<br>A Plus Software<br>namaa-aplusdevs.netlify.app</p>
   </div>
-
 `,
     };
 
