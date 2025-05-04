@@ -31,7 +31,8 @@ app.post('/send-email', async (req, res) => {
   <div style="font-family: Arial, sans-serif; padding: 20px;">
     <p>Unit <strong>${unitNo}_${project}</strong> has a new booking request added by <strong>${salesAgent}</strong>.</p>
     <p>Booking in progress by operation team.</p>
-    <p>تم عمل طلب حجز عالوحدة , وفي إنتظار فريق العمليات لإتخاذ اللازم</p>
+    <p>تم عمل طلب حجز عالوحدة ${unitNo}-${project}</p>
+    <p>في إنتظار فريق العمليات لإتخاذ اللازم</p>
     <br>
     <p>Good Luck! , بالتوفيق</p>
     <p>Sales Operations Team<br>A Plus Software<br>namaa-aplusdevs.netlify.app</p>
