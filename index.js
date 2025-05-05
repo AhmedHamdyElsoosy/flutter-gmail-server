@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.post('/send-email', async (req, res) => {
-  const { toEmail, unitNo, project, salesAgent,salesManager,salesDirector,lineOne,lineTwo,lineThree,lineFour,greetings } = req.body;
+  const { toEmail, unitNo, project, salesAgent,salesManager,salesDirector,subject,lineOne,lineTwo,lineThree,lineFour,greetings } = req.body;
 
   try {
     // إعدادات الإرسال من Gmail
@@ -26,7 +26,7 @@ app.post('/send-email', async (req, res) => {
     let mailOptions = {
       from: '"Ahmed Hamdy" <7amdy.elsoosy@gmail.com>',
       to: toEmail,
-      subject: `(${unitNo}-${project} Booking Request Added)`,
+      subject: `${subject}`,
       html: `
   <div style="font-family: Arial, sans-serif; padding: 20px;">
     </p>Dear ${salesAgent} & All Responsible for ,</p>
