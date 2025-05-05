@@ -29,6 +29,8 @@ app.post('/send-email', async (req, res) => {
       subject: `(${unitNo}-${project} Booking Request Added)`,
       html: `
   <div style="font-family: Arial, sans-serif; padding: 20px;">
+    </p>Dear ${salesAgent} & All Responsible for ,</p>
+    <br>
     <p>${lineOne}</p>
     <p>${lineTwo}</p>
     <p>${lineThree}</p>
