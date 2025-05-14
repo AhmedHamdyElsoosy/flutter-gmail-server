@@ -24,7 +24,7 @@ app.post('/send-email', async (req, res) => {
 
     // الإيميل نفسه
     let mailOptions = {
-      from: '"Ahmed Hamdy" <7amdy.elsoosy@gmail.com>',
+      from: '"NAD Operation - Aplus" <7amdy.elsoosy@gmail.com>',
       to: toEmail,
       subject: `${subject}`,
       html: `
