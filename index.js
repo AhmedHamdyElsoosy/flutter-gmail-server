@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.post('/send-email', async (req, res) => {
-  const { toEmail, unitNo, project, salesAgent,salesManager,salesDirector,subject,lineOne,lineTwo,lineThree,lineFour,greetings } = req.body;
+  const { toEmail, unitNo, project, salesAgent,salesManager,salesDirector,subject,lineOne,lineTwo,lineThree,lineFour} = req.body;
 
   try {
     // إعدادات الإرسال من Gmail
@@ -25,7 +25,7 @@ app.post('/send-email', async (req, res) => {
     // الإيميل نفسه
     let mailOptions = {
       from: '"NAD Operation - Aplus" <7amdy.elsoosy@gmail.com>',
-      to: toEmail,
+      to: toEmail.join(','),
       subject: `${subject}`,
       html: `
   <div style="font-family: Arial, sans-serif; padding: 20px;">
