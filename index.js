@@ -22,6 +22,10 @@ app.post('/send-email', async (req, res) => {
       },
     });
 
+if (!Array.isArray(toEmail)) {
+  return res.status(400).json({ status: 'error', message: 'toEmail must be an array' });
+}
+
     // الإيميل نفسه
     let mailOptions = {
       from: '"NAD Operation - Aplus" <7amdy.elsoosy@gmail.com>',
@@ -29,12 +33,12 @@ app.post('/send-email', async (req, res) => {
       subject: `${subject}`,
       html: `
   <div style="font-family: Arial, sans-serif; padding: 20px;">
-    </p>Dear ${salesAgent} & All Responsible for ,</p>
+     <p>Dear ${salesAgent || 'Team'} & All Responsible for ,</p>
     <br>
-    <p>${lineOne}</p>
-    <p>${lineTwo}</p>
-    <p>${lineThree}</p>
-    <p>${lineFour}</p>
+    <p>${lineOne || ''}</p>
+    <p>${lineTwo || ''}</p>
+    <p>${lineThree || ''}</p>
+    <p>${lineFour || ''}</p>
     <br>
     <p>Good Luck! , بالتوفيق</p>
     <p>Sales Operations Team<br>A Plus Software<br>namaa-aplusdevs.netlify.app</p>
