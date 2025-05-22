@@ -41,7 +41,7 @@ if (!Array.isArray(toEmail)) {
     <p>${lineFour || ''}</p>
     <br>
     <p>Good Luck! , بالتوفيق</p>
-    <p>Sales Operations Team<br>A Plus Software<br>namaa-aplusdevs.netlify.app</p>
+    <p>Sales Operations Team<br>A Plus Software<br>Website : Nad-Aplus.netlify.app</p>
   </div>
 `,
     };
