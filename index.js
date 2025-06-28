@@ -28,7 +28,7 @@ if (!Array.isArray(toEmail)) {
 
     // الإيميل نفسه
     let mailOptions = {
-      from: '"NAD Operation - Aplus" <7amdy.elsoosy@gmail.com>',
+      from: '"Sphinx Operation - Aplus" <7amdy.elsoosy@gmail.com>',
       to: toEmail.join(','),
       subject: `${subject}`,
       html: `
@@ -41,7 +41,7 @@ if (!Array.isArray(toEmail)) {
     <p>${lineFour || ''}</p>
     <br>
     <p>Good Luck! , بالتوفيق</p>
-    <p>Sales Operations Team<br>A Plus Software<br>Website : Nad-Aplus.netlify.app</p>
+    <p>Sales Operations Team<br>A Plus Software<br>Website : Sphinx.Aplus-Dev.com</p>
   </div>
 `,
     };
