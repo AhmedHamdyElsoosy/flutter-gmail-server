@@ -28,7 +28,7 @@ if (!Array.isArray(toEmail)) {
 
     // الإيميل نفسه
     let mailOptions = {
-      from: '"Sphinx Operation - Aplus" <7amdy.elsoosy@gmail.com>',
+      from: '"Sphinx Operation - Aplus"',
       to: toEmail.join(','),
       subject: `${subject}`,
       html: `
